@@ -24,7 +24,10 @@ void upload_sensor(String sensorId, String sensorVal)
       // id_system_sensor=55&value=11&token=a4dce674484e493f7ab1f40a7a9e6f94
       // Send HTTP POST request
       int httpResponseCode = http.POST(httpRequestData);
-        
+
+      Serial.print("HTTP Response code: ");
+      Serial.println(httpResponseCode); 
+
       // Free resources
       http.end();
     }
