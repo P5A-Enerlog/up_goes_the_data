@@ -9,8 +9,8 @@
 const char* ssid = "Pixel1";
 const char* password = "12345678";
 
-String sensorId= "54";
-String sensorValue= "2048";
+String sensorId= "";
+String sensorValue= "";
 
 //  SENSORS //
 #define FAN_PIN 14
@@ -85,6 +85,9 @@ void get_dht() {
   // Read temperature as Fahrenheit (isFahrenheit = true)
   float f = dht.readTemperature(true);
 
+  // Set the sensor id for the upload
+  sensorId = "54";
+
   // Check if any reads failed and exit early (to try again).
   if (isnan(h) || isnan(t) || isnan(f)) {
     Serial.println(F("Failed to read from DHT sensor!"));
@@ -102,27 +105,33 @@ void get_dht() {
 
 void get_thermocouple() {
   //thermocouple
+
+  //Set the sensor id for upload
+  sensorId = "60";
+
   Serial.print("Thermocouple, C = "); 
   Serial.println(thermocouple.readCelsius());
 }
 
 void get_anemometer() {
-   //anemometer
+  //anemometer
+
+  //Set the sensor id for upload
+  sensorId = "53";
+
   measure();
   Serial.print("Wind Speed: ");
   Serial.print(WindSpeed);       //Speed in km/h
   Serial.print(" km/h - ");
   Serial.print(WindSpeed / 3.6); //Speed in m/s
-  Serial.println(" m/s"); 
+  Serial.println(" m/s");
 }
 
-void set_fan() {
+void set_fan(int fanSpeed) {
   //fan
-  fanSpeed = (fanCount%2==0)*255;
   ledcWrite(ledChannel, fanSpeed);
   Serial.print("fan speed: ");
   Serial.println(fanSpeed);
-  fanCount++;
 }
 
 void measure() {

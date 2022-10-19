@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/zakenobi/Documents/5A/enerlog/dev/up_goes_the _data/app",
+      "program": "/home/zakenobi/Documents/5A/enerlog/dev/up_goes_the _data/app/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/home/zakenobi/.arduino15/packages/esp32/tools/xtensa-esp32-elf-gdb/1.22.0-97-gc752ad5-5.2.0/bin/xtensa-esp32-elf-g++",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
