@@ -15,12 +15,16 @@ String sensorValue= "";
 //  SENSORS //
 #define FAN_PIN 14
 
+#define analogPin 2 // pin de sortie du pyranomètre
+
 #define DHTPIN 26
 #define DHTTYPE DHT22
 DHT dht(DHTPIN, DHTTYPE);
 
 const int RecordTime = 3; //Define Measuring Time (Seconds)
 const int SensorPin = 27;  //Define Interrupt Pin (2 for Arduino Uno)
+
+float pyr = 0; // initialisation du pyranomètre
 
 int fanSpeed=200;
 int fanCount =0;
@@ -64,13 +68,24 @@ void setup() {
   // attach the channel to the GPIO to be controlled
   ledcAttachPin(FAN_PIN, ledChannel);
 
+  set_fan(200);
+
   delay(500);  
 }
 
 void loop() {
-  //Send an HTTP POST request every 10 seconds
+  //Send an HTTP POST request every 5 min
   if ((millis() - lastTime) > timerDelay) {
     
+    get_thermocouple();
+    upload_sensor(sensorId,sensorValue);
+    sleep(100);
+
+    // get_pyrano();
+    // upload_sensor(sensorId,sensorValue);
+    // sleep(100);
+
+    get_dht();
     upload_sensor(sensorId,sensorValue);
     
     lastTime = millis();
@@ -87,6 +102,9 @@ void get_dht() {
 
   // Set the sensor id for the upload
   sensorId = "54";
+
+  sensorValue = t +'0';
+
 
   // Check if any reads failed and exit early (to try again).
   if (isnan(h) || isnan(t) || isnan(f)) {
@@ -108,9 +126,10 @@ void get_thermocouple() {
 
   //Set the sensor id for upload
   sensorId = "60";
+  sensorValue = thermocouple.readCelsius() +'0';
 
   Serial.print("Thermocouple, C = "); 
-  Serial.println(thermocouple.readCelsius());
+  Serial.println(sensorValue);
 }
 
 void get_anemometer() {
@@ -118,6 +137,7 @@ void get_anemometer() {
 
   //Set the sensor id for upload
   sensorId = "53";
+  sensorValue = thermocouple.readCelsius() +'0';  
 
   measure();
   Serial.print("Wind Speed: ");
@@ -144,4 +164,15 @@ void measure() {
 
 void countup() {
   InterruptCounter++;
+}
+
+void get_pyrano() {
+  pyr = analogRead(analogPin);
+  pyr = pyr * ((0.4 * 3300) / 4095); // ESP32 conversion : 0-4096 -> 0-3.3Vs
+
+  //Set the sensor id for upload
+  sensorId = "52";
+  sensorValue = pyr +'0';
+
+  Serial.println(pyr);
 }
