@@ -43,8 +43,8 @@ MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
 // For a final application, check the API call limits per hour/minute to avoid getting blocked/banned
 unsigned long lastTime = 0;
 
-// unsigned long timerDelay = 60 * 1000 * 5; // 5 minutes timer
-unsigned long timerDelay = 10 * 1000; // 5 minutes timer
+unsigned long timerDelay = 60 * 1000 * 5; // 5 minutes timer
+//unsigned long timerDelay = 10 * 1000; // 5 minutes timer
 
 void setup()
 {
@@ -70,7 +70,7 @@ void setup()
   // attach the channel to the GPIO to be controlled
   ledcAttachPin(FAN_PIN, ledChannel);
 
-  set_fan(0);
+  set_fan(200);
 
   delay(500);
 }

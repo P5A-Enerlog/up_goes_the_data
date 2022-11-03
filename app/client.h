@@ -3,8 +3,8 @@
 #include <HTTPClient.h>
 
 // Domain Name with full URL Path for HTTP POST Request
-// const char *serverName = "http://preprodapi.mde.epf.fr/add_measure.php";
-const char *serverName = "";
+const char *serverName = "http://preprodapi.mde.epf.fr/add_measure.php";
+// const char *serverName = "";
 // Service API Key
 String apiKey = "a4dce674484e493f7ab1f40a7a9e6f94";
 
@@ -26,11 +26,6 @@ void upload_sensor(String sensorId, String sensorVal)
     // id_system_sensor=55&value=11&token=a4dce674484e493f7ab1f40a7a9e6f94
     // Send HTTP POST request
     int httpResponseCode = http.POST(httpRequestData);
-
-    Serial.print("Uploading sensor:");
-    Serial.println(sensorId);
-    Serial.print("Sensor value:");
-    Serial.println(sensorVal);
 
     Serial.println("HTTP Response code: ");
     Serial.println(httpResponseCode);
