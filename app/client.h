@@ -41,40 +41,40 @@ void upload_sensor(String sensorId, String sensorVal)
   }
 }
 
-// Get exact time 
+// Get exact time (minutes only)
 int get_time()
 {
   WiFiClient client;
   HTTPClient http;
-  String timeZone = "Europe/Paris"
-  String serverName = "https://timeapi.io/api/Time/current/"
-  String httpRequest = serverName + "zone?timeZone=" + timeZone
+  String timeZone = "Europe/Paris";
+  String serverName = "https://timeapi.io/api/Time/current/";
+  String httpRequest = serverName + "zone?timeZone=" + timeZone;
 
-  http.begin(httpRequest.c_str());
+  http.begin(httpRequest.c_str()); // init the connection
 
   int minutes = 99; // default value in case it is unable to get the time
-  int httpResponseCode = http.GET();
+  int httpResponseCode = http.GET(); // GET request
 
-  if (httpResponseCode==200) 
+  if (httpResponseCode==200) // in case of success
   {
     Serial.print("HTTP Response code: ");
     Serial.println(httpResponseCode);
-    String payload = http.getString();
+    String payload = http.getString(); // get payload data
     Serial.println(payload);
 
-    DynamicJsonDocument timeDoc(1024);
-    deserializeJson(timeDoc, payload);
+    DynamicJsonDocument timeDoc(1024); // init json document 
+    deserializeJson(timeDoc, payload); // transform payload to json
 
-    minutes = timeDoc["minute"];
+    minutes = timeDoc["minute"]; // extract the minutes value
     Serial.println(minutes);
   }
-  else 
+  else // request failed
   {
     Serial.print("Error code: ");
     Serial.println(httpResponseCode);
   }
 
-  http.end()
+  http.end(); // end the connection
 
-  return minutes
+  return minutes;
 }
