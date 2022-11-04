@@ -8,6 +8,7 @@
 
 const char *ssid = "Pixel1";
 const char *password = "12345678";
+// epf-projets: OFh7tRXxJ5PO1KFW0BbI
 
 String sensorId = "";
 String sensorValue = "";
@@ -77,10 +78,9 @@ void setup()
 
 void loop()
 {
-  // Send an HTTP POST request every 5 min
-  if ((millis() - lastTime) > timerDelay)
+  int minute = get_time();
+  if ((minute%5) == 0)
   {
-
     get_thermocouple(thermocouple, sensorValue, "60");
 
     //Serial.println("thermo is done");
@@ -92,9 +92,9 @@ void loop()
 
     get_anemometer(RecordTime, SensorPin, sensorValue, "53");
     //Serial.println("anemo is done");
-
     lastTime = millis();
   }
+  delay(1000 * 60);  
 }
 
 void set_fan(int fanSpeed)

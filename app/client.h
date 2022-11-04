@@ -55,7 +55,7 @@ int get_time()
     Serial.print("HTTP Response code: ");
     Serial.println(httpResponseCode);
     String payload = http.getString(); // get payload data
-    Serial.println(payload);
+    // Serial.println(payload);
 
     DynamicJsonDocument timeDoc(1024); // init json document 
     deserializeJson(timeDoc, payload); // transform payload to json
