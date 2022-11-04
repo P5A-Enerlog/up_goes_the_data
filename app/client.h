@@ -5,8 +5,8 @@
 #include "secret_keys.h"
 
 // Domain Name with full URL Path for HTTP POST Request
-// const char *serverName = "http://preprodapi.mde.epf.fr/add_measure.php";
-const char *serverName = "";
+const char *serverName = "http://preprodapi.mde.epf.fr/add_measure.php";
+// const char *serverName = "";
 // Service API Key
 String apiKey = EPF_API_KEY;
 
@@ -28,11 +28,6 @@ void upload_sensor(String sensorId, String sensorVal)
     // id_system_sensor=55&value=11&token=EPF_API_KEY
     // Send HTTP POST request
     int httpResponseCode = http.POST(httpRequestData);
-
-    Serial.print("Uploading sensor:");
-    Serial.println(sensorId);
-    Serial.print("Sensor value:");
-    Serial.println(sensorVal);
 
     Serial.println("HTTP Response code: ");
     Serial.println(httpResponseCode);
@@ -62,7 +57,7 @@ int get_time(int get_seconds)
   if (httpResponseCode==200) // in case of success
   {
     String payload = http.getString(); // get payload data
-    //Serial.println(payload);
+    // Serial.println(payload);
 
     DynamicJsonDocument timeDoc(1024); // init json document 
     deserializeJson(timeDoc, payload); // transform payload to json
