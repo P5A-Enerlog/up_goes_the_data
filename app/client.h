@@ -38,7 +38,7 @@ void upload_sensor(String sensorId, String sensorVal)
 }
 
 // Get exact time from an external API (min or sec)
-// input: get_seconds indicate if you want the value in seconds (1) or in minutes (0)
+// input: get_seconds indicates if you want the value in seconds (1) or in minutes (0)
 // output: the value of minutes (min) or minutes*60+seconds (sec)
 int get_time(int get_seconds)
 {
@@ -94,11 +94,12 @@ int get_next_send_time(int current_time){
 }
 
 
-// Wait until next send time
-void wait_until_next_send_time()
+// Wait until next send time (or x minutes before)
+// input: before indicates how many minutes before send time
+void wait_until_next_send_time(int before)
 { 
-  int current_time = get_time(1);
-  int send_time = get_next_send_time(current_time);
+  int current_time = get_time(1); // in seconds
+  int send_time = get_next_send_time(current_time)-before*60; // in seconds
   int wait_time = send_time-current_time; // difference between next send time and current time, in seconds
   delay(wait_time*1000); // wait
 }
