@@ -4,13 +4,15 @@
 #include <ArduinoJson.h>
 #include "secret_keys.h"
 
+#define TIME_INTERVAL 5 // time between two send (in minutes), minimum 5
+
 // Domain Name with full URL Path for HTTP POST Request
-const char *serverName = "http://preprodapi.mde.epf.fr/add_measure.php";
+String serverName = "http://192.168.139.27/add_measure.php"; //"http://preprodapi.mde.epf.fr/add_measure.php";
 // const char *serverName = "";
 // Service API Key
 String apiKey = EPF_API_KEY;
 
-void upload_sensor(String sensorId, String sensorVal)
+void upload_sensor(int sensorId, String sensorVal)
 {
   if (WiFi.status() == WL_CONNECTED)
   {
@@ -18,12 +20,14 @@ void upload_sensor(String sensorId, String sensorVal)
     HTTPClient http;
 
     // Your Domain name with URL path or IP address with path
-    http.begin(client, serverName);
+    http.begin(client, serverName.c_str());
 
     // Specify content-type header
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     // Data to send with HTTP POST
-    String httpRequestData = "id_system_sensor=" + sensorId + "&value=" + sensorVal + "&token=" + apiKey;
+    String httpRequestData = "id_system_sensor=" + String(sensorId) + "&value=" + sensorVal + "&token=" + apiKey;
+    Serial.print("POST ");
+    Serial.println(httpRequestData.substring(0, httpRequestData.length()-30));
 
     // id_system_sensor=55&value=11&token=EPF_API_KEY
     // Send HTTP POST request
@@ -80,16 +84,14 @@ int get_time(int get_seconds)
   return minutes+(minutes*59*get_seconds)+seconds; // return time in minutes if get_seconds=0, or in seconds if get_seconds=1
 }
 
-
 // Get the next time value to send the data
 // input: current_time in seconds between 0 and 59*60
-// output: next_send_time in seconds (either 30*60 or 60*60)
+// output: next_send_time in seconds (for example, for TIME_INTERVAL=30, either 30*60 or 60*60)
 int get_next_send_time(int current_time){ 
-  int next_send_time = 30*60;
-  if (current_time>30*60)
-  {
-    next_send_time = 60*60;
-  }
+  int next_send_time = current_time;
+  next_send_time += TIME_INTERVAL*60 - current_time%(TIME_INTERVAL*60); // round current time to next send time
+  Serial.print("Next send time: ");
+  Serial.println(next_send_time/60);
   return next_send_time;
 }
 

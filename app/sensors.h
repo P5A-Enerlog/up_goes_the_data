@@ -19,12 +19,13 @@ String get_thermocouple(MAX6675 thermocouple)
 String get_dht(DHT dht, int sensor)
 {
     // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+    float v;
     if (sensor)
     {
-      float v = dht.readHumidity();
+      v = dht.readHumidity();
     } else {
       // Read temperature as Celsius (the default)
-      float v = dht.readTemperature();
+      v = dht.readTemperature();
     }
     
     char sensorValue[50];
