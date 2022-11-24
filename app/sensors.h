@@ -9,9 +9,6 @@ String get_thermocouple(MAX6675 thermocouple)
     char sensorValue[50];
     sprintf(sensorValue, "%g", thmcple);
     
-    Serial.print("Thermocouple, C = ");
-    Serial.println(sensorValue);
-
     return sensorValue;
 }
 
@@ -67,7 +64,6 @@ String get_pyrano(int analogPin)
 
   char sensorValue[50];
   sprintf(sensorValue, "%g", pyr);
-
-  Serial.println(pyr);
+  
   return sensorValue;
 }

@@ -16,7 +16,7 @@ DHT dht1(DHT_PIN_1, DHT_TYPE);
 DHT dht2(DHT_PIN_2, DHT_TYPE);
 DHT dht3(DHT_PIN_3, DHT_TYPE);
 DHT dht4(DHT_PIN_4, DHT_TYPE);
-DHT *dhts[2]={&dht1, &dht2};
+DHT *dhts[4]={&dht1, &dht2, &dht3, &dht4};
 
 #define THERMOCOUPLE_SO 19
 #define THERMOCOUPLE_CLK 18
@@ -24,17 +24,18 @@ DHT *dhts[2]={&dht1, &dht2};
 #define THERMOCOUPLE_CS_2 23
 MAX6675 thermocouple1(THERMOCOUPLE_CLK, THERMOCOUPLE_CS_1, THERMOCOUPLE_SO);
 MAX6675 thermocouple2(THERMOCOUPLE_CLK, THERMOCOUPLE_CS_2, THERMOCOUPLE_SO);
+MAX6675 *thermocouples[2]={&thermocouple1, &thermocouple2};
 
 // TODO adjust variables types (short) to optimize memory
 
 #define ANEMO_PIN 27 // anemometer pin 
-const int RecordTime = 3; // Define Measuring Time for anemometer (Seconds)
+const int anemoRecordTime = 10; // Define Measuring Time for anemometer (Seconds)
 
 #define PYRANO_PIN 2 // analog pin for pyranometer
 float pyrano = 0; // init pyranometer
 
 #define FAN_PIN 14
-int fanSpeed = 200;
+int fanSpeed = 100; // No more than 191
 int fanCount = 0;
 const int freq = 5000;
 const int ledChannel = 0;
@@ -46,40 +47,25 @@ float WindSpeed;
 unsigned long lastTime = 0;
 
 const int number_of_sensors = 12;
-int sensor_Ids[number_of_sensors];
+// fill sensor_Ids with values corresponding to the sensors IDs in the EPF API
+const int sensor_Ids[] = {57, 58, 59, 60, 67, 68, 69, 70 ,61, 62, 52, 53};
 String sensor_values[number_of_sensors];
 
 void setup()
 {
   // TODO modify EPF API to add anemometer
-  // fill sensor_Ids with values corresponding to the sensors IDs in the EPF API
-  //for (int i=0; i<number_of_sensors; i++)
-  sensor_Ids[0] = 58;
-  sensor_Ids[1] = 68;
-  //sensor_Ids[2] = 60;
-  //sensor_Ids[3] = 70;
-
 
   pinMode(PYRANO_PIN, INPUT);
 
 
   Serial.begin(9600);
 
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.println("Connecting");
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.print("Connected to WiFi network with IP Address: ");
-  Serial.println(WiFi.localIP());
+  wifi_start();
 
   dht1.begin();
   dht2.begin();
-  //dht3.begin();
-  //dht4.begin();
+  dht3.begin();
+  dht4.begin();
 
   delay(500);
 
@@ -88,7 +74,7 @@ void setup()
   // attach the channel to the GPIO to be controlled
   ledcAttachPin(FAN_PIN, ledChannel);
 
-  set_fan(200);////
+  set_fan(100);////
 
   delay(500);
 }
@@ -107,6 +93,8 @@ void loop()
   // preparation time: between 4 and 1 minutes before send time
   if ( minutes >= TIME_INTERVAL-4 && minutes <= TIME_INTERVAL-1 )
   {
+    wifi_stop();
+
     // get all the sensors values
     // 52 pyrano
     // 57 // 67 DHT air layer upper humidity
@@ -115,41 +103,63 @@ void loop()
     // 60 // 70 DHT air layer lower temperature
     // 61 // 71 thermocouple outside surface upper temperature
     // 62 // 72 thermocouple outside surface lower temperature
-
-    // TODO set all the ids
-
-    // sensor_values[0] = get_pyrano(PYRANO_PIN);
-    // delay(100);
     
-    // for each dht :
-    for(int i=0; i<2; i++){
-      sensor_values[i] = get_dht(*dhts[i], 0);
-      Serial.print("DHT");
-      Serial.print(i);
-      Serial.print(" = ");
+    // DHTs
+    int k=0;
+    for(int i=0; i<8; i+=2){
+      sensor_values[i] = get_dht(*dhts[k], 1); // get humidity
+      delay(2000);
+      sensor_values[i+1] = get_dht(*dhts[k], 0); // get temperature
+      k++;
+      Serial.print("DHT ");
+      Serial.println(k);
+      Serial.print("H = ");
       Serial.println(sensor_values[i]);
-      delay(100);
+      Serial.print("T = ");
+      Serial.println(sensor_values[i+1]);
+      delay(2000);
     }
 
-    // sensor_values[9] = get_thermocouple(thermocouple1);
-    // delay(100);
-    // sensor_values[10] = get_thermocouple(thermocouple2);
-    // delay(100);
+    // Thermocouples
+    for(int i=8; i<10; i++){
+      k=i-8;
+      sensor_values[i] = get_thermocouple(*thermocouples[k]);
+      delay(100);
+      Serial.print("Thermocouple ");
+      Serial.print(k);
+      Serial.print(" = ");
+      Serial.println(sensor_values[i]);
+    }
 
-    // sensor_values[11] = get_anemometer(RecordTime, ANEMO_PIN);
-    // delay(100);
+    // Pyranometer
+    sensor_values[10] = get_pyrano(PYRANO_PIN);
+    delay(100);
+    Serial.print("Pyrano: ");
+    Serial.println(sensor_values[10]);
 
-    // lastTime = millis();
+    // Anemometer
+    sensor_values[11] = get_anemometer(anemoRecordTime, ANEMO_PIN);
+    delay(100);
 
+    // Reconnect to WiFi
+    WiFi.mode(WIFI_STA);
+    wifi_start();
 
     // now that all the data is collected, wait until next send time
     Serial.println("Waiting until next send time...");
     wait_until_next_send_time(0);
+
+   
     // send the data
     Serial.println("Send time!");
-    for (int i=0; i<2; i++) //i<number_of_sensors
+    for (int i=0; i<number_of_sensors; i++) //i<number_of_sensors
     {
+      //Serial.println("Sensor is fakely send");
+      //Serial.print("");
+      //Serial.println(sensor_values[i]);
       upload_sensor(sensor_Ids[i], sensor_values[i]);
+      Serial.print(sensor_Ids[i]);
+      Serial.println(" is uploaded");
     }
   } 
   else // idle time

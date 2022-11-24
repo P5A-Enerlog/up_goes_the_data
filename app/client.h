@@ -12,6 +12,33 @@ String serverName = "http://192.168.139.27/add_measure.php"; //"http://preprodap
 // Service API Key
 String apiKey = EPF_API_KEY;
 
+void wifi_start()
+{
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  Serial.println("Connecting");
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void wifi_restart()
+{
+  WiFi.mode(WIFI_STA);
+  wifi_start();
+}
+
+void wifi_stop()
+{
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_OFF);
+  Serial.println("wifi stopped");
+}
+
 void upload_sensor(int sensorId, String sensorVal)
 {
   if (WiFi.status() == WL_CONNECTED)
@@ -96,12 +123,12 @@ int get_next_send_time(int current_time){
 }
 
 
-// Wait until next send time (or x minutes before)
+// Wait until next send time (or x minutes before, actually x-1 min and 50 sec)
 // input: before indicates how many minutes before send time
 void wait_until_next_send_time(int before)
 { 
   int current_time = get_time(1); // in seconds
   int send_time = get_next_send_time(current_time)-before*60; // in seconds
-  int wait_time = send_time-current_time; // difference between next send time and current time, in seconds
+  int wait_time = send_time-current_time+10; // difference between next send time and current time, in seconds, add 10 seconds for safety
   delay(wait_time*1000); // wait
 }
