@@ -7,23 +7,36 @@
 #define TIME_INTERVAL 5 // time between two send (in minutes), minimum 5
 
 // Domain Name with full URL Path for HTTP POST Request
-String serverName = "http://192.168.139.27/add_measure.php"; //"http://preprodapi.mde.epf.fr/add_measure.php";
+String serverName = "http://192.168.139.27/add_measure.php"; //"http://preprodapi.mde.epf.fr/add_measure.php"; // http://192.168.139.27/add_measure.php"
 // const char *serverName = "";
 // Service API Key
 String apiKey = EPF_API_KEY;
 
 void wifi_start()
 {
+  int count=0;
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.println("Connecting");
+  delay(500);
+  //Serial.println("Connecting");
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
-    Serial.print(".");
+    //Serial.print(".");
+    // Restart system if unable to connect for around 8 minutes
+    if (count>8*60*2){
+      ESP.restart();
+    }
+    // Retry to connect if unable to connect for around 2 minutes
+    if (count%(2*60*2)==0){
+      WiFi.disconnect();
+      delay(500);
+      WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    }
+    count++;
   }
-  Serial.println("");
-  Serial.print("Connected to WiFi network with IP Address: ");
-  Serial.println(WiFi.localIP());
+  //Serial.println("");
+  //Serial.print("Connected to WiFi network with IP Address: ");
+  //Serial.println(WiFi.localIP());
 }
 
 void wifi_restart()
@@ -36,36 +49,47 @@ void wifi_stop()
 {
   WiFi.disconnect(true);
   WiFi.mode(WIFI_OFF);
-  Serial.println("wifi stopped");
+  //Serial.println("wifi stopped");
 }
 
 void upload_sensor(int sensorId, String sensorVal)
 {
-  if (WiFi.status() == WL_CONNECTED)
+  int count=0;
+  // ensure that the connection is still estabilshed , else retry to connect
+  while (WiFi.status() != WL_CONNECTED)
   {
-    WiFiClient client;
-    HTTPClient http;
+    wifi_restart();
+  } 
+  
+  WiFiClient client;
+  HTTPClient http;
 
-    // Your Domain name with URL path or IP address with path
-    http.begin(client, serverName.c_str());
+  // Your Domain name with URL path or IP address with path
+  http.begin(client, serverName.c_str());
 
-    // Specify content-type header
-    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    // Data to send with HTTP POST
-    String httpRequestData = "id_system_sensor=" + String(sensorId) + "&value=" + sensorVal + "&token=" + apiKey;
-    Serial.print("POST ");
-    Serial.println(httpRequestData.substring(0, httpRequestData.length()-30));
+  // Specify content-type header
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  // Data to send with HTTP POST
+  String httpRequestData = "id_system_sensor=" + String(sensorId) + "&value=" + sensorVal + "&token=" + apiKey;
+  //Serial.print("POST ");
+  //Serial.println(httpRequestData.substring(0, httpRequestData.length()-30));
 
-    // id_system_sensor=55&value=11&token=EPF_API_KEY
-    // Send HTTP POST request
-    int httpResponseCode = http.POST(httpRequestData);
+  // id_system_sensor=55&value=11&twifi_restartoken=EPF_API_KEY
+  // Send HTTP POST request
 
-    Serial.println("HTTP Response code: ");
-    Serial.println(httpResponseCode);
-
-    // Free resources
-    http.end();
+  // in case of 10 successive failures to connect to the api, restart the ESP
+  while (http.POST(httpRequestData)!=200)
+  {
+    if (count>10)
+    { 
+      ESP.restart();
+    }
+    count++;
+    delay(1000);
   }
+
+  // Free resources
+  http.end();
 }
 
 // Get exact time from an external API (min or sec)
@@ -78,32 +102,39 @@ int get_time(int get_seconds)
   String timeZone = "Europe/Paris";
   String serverName = "https://timeapi.io/api/Time/current/";
   String httpRequest = serverName + "zone?timeZone=" + timeZone;
+  int count = 0;
+  int minutes = 99; // default value in case it is unable to get the time
+  int seconds = 0; 
+
+  // ensure that the connection is still estabilshed , else retry to connect
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    wifi_restart();
+  } 
 
   http.begin(httpRequest.c_str()); // init the connection
 
-  int minutes = 99; // default value in case it is unable to get the time
-  int seconds = 0; 
-  int httpResponseCode = http.GET(); // GET request
-
-  if (httpResponseCode==200) // in case of success
+  // in case of 10 successive failures to connect to the api, restart the ESP
+  while (http.GET()!=200)
   {
-    String payload = http.getString(); // get payload data
-    // Serial.println(payload);
-
-    DynamicJsonDocument timeDoc(1024); // init json document 
-    deserializeJson(timeDoc, payload); // transform payload to json
-
-    minutes = timeDoc["minute"]; // extract the minutes value
-    if (get_seconds)
-    {
-      seconds = timeDoc["seconds"]; // extract the seconds value
+    if (count>10)
+    { 
+      ESP.restart();
     }
-    //Serial.println(minutes);
+    count++;
+    delay(1000);
   }
-  else // request failed
+
+  String payload = http.getString(); // get payload data
+  //Serial.println(payload);
+
+  DynamicJsonDocument timeDoc(1024); // init json document 
+  deserializeJson(timeDoc, payload); // transform payload to json
+
+  minutes = timeDoc["minute"]; // extract the minutes value
+  if (get_seconds)
   {
-    Serial.print("Error code: ");
-    Serial.println(httpResponseCode);
+    seconds = timeDoc["seconds"]; // extract the seconds value
   }
 
   http.end(); // end the connection
@@ -117,8 +148,8 @@ int get_time(int get_seconds)
 int get_next_send_time(int current_time){ 
   int next_send_time = current_time;
   next_send_time += TIME_INTERVAL*60 - current_time%(TIME_INTERVAL*60); // round current time to next send time
-  Serial.print("Next send time: ");
-  Serial.println(next_send_time/60);
+  //Serial.print("Next send time: ");
+  //Serial.println(next_send_time/60);
   return next_send_time;
 }
 

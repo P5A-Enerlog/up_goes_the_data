@@ -48,11 +48,11 @@ String get_anemometer(int RecordTime, int SensorPin)
   char sensorValue[50];
   sprintf(sensorValue, "%g", WindSpeed);
 
-  Serial.print("Wind Speed: ");
-  Serial.print(WindSpeed); // Speed in km/h
-  Serial.print(" km/h - ");
-  Serial.print(WindSpeed / 3.6); // Speed in m/s
-  Serial.println(" m/s");
+  //Serial.print("Wind Speed: ");
+  //Serial.print(WindSpeed); // Speed in km/h
+  //Serial.print(" km/h - ");
+  //Serial.print(WindSpeed / 3.6); // Speed in m/s
+  //Serial.println(" m/s");
 
   return sensorValue;
 }
