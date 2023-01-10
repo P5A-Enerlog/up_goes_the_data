@@ -1,16 +1,14 @@
 // import required libraries
 #include "max6675.h"
-#include "DHT.h"
-#include <WiFi.h>
 #include <HTTPClient.h>
 #include "client.h"
 #include "sensors.h"
 
 //  SENSORS //
-#define DHT_PIN_1 32
-#define DHT_PIN_2 33
+#define DHT_PIN_1 27
+#define DHT_PIN_2 26
 #define DHT_PIN_3 25
-#define DHT_PIN_4 26
+#define DHT_PIN_4 33
 #define DHT_TYPE DHT22
 DHT dht1(DHT_PIN_1, DHT_TYPE);
 DHT dht2(DHT_PIN_2, DHT_TYPE);
@@ -28,14 +26,14 @@ MAX6675 *thermocouples[2]={&thermocouple1, &thermocouple2};
 
 // TODO adjust variables types (short) to optimize memory
 
-#define ANEMO_PIN 27 // anemometer pin 
+#define ANEMO_PIN 32 // anemometer pin 
 const int anemoRecordTime = 10; // Define Measuring Time for anemometer (Seconds)
 
 #define PYRANO_PIN 2 // analog pin for pyranometer
 float pyrano = 0; // init pyranometer
 
 #define FAN_PIN 14
-int fanSpeed = 100; // No more than 191
+int fanSpeed = 0; // No more than 191
 int fanCount = 0;
 const int freq = 5000;
 const int ledChannel = 0;
@@ -62,7 +60,6 @@ void setup()
 
   Serial.begin(9600);
   delay(500);
-  //set_fan(0);
   
   wifi_start();
 
@@ -78,7 +75,7 @@ void setup()
   // attach the channel to the GPIO to be controlled
   ledcAttachPin(FAN_PIN, ledChannel);
 
-  set_fan(100);////
+  set_fan(0);////
 
   delay(500);
 }
@@ -120,6 +117,7 @@ void loop()
       delay(2500);
       sensor_values[i+1] = get_dht(*dhts[k], 0); // get temperature
       delay(2500);
+
       //Serial.print("DHT ");
       //Serial.println(k);
       //Serial.print("H = ");
@@ -134,11 +132,19 @@ void loop()
       k=i-8;
       sensor_values[i] = get_thermocouple(*thermocouples[k]);
       delay(100);
+      if (i==8 && sensor_values[i].toFloat()>=22.0)
+      {
+        fanSpeed = 150;
+      } else {
+        fanSpeed = 0;
+      }
       //Serial.print("Thermocouple ");
       //Serial.print(k);
       //Serial.print(" = ");
       //Serial.println(sensor_values[i]);
     }
+
+    set_fan(fanSpeed);
 
     // Pyranometer
     sensor_values[10] = get_pyrano(PYRANO_PIN);
@@ -151,7 +157,7 @@ void loop()
     delay(100);
 
     // Reconnect to WiFi
-    wifi_restart();
+    wifi_start();
 
     // now that all the data is collected, wait until next send time
     //Serial.println("Waiting until next send time...");

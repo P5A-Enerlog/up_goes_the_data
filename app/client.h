@@ -4,7 +4,7 @@
 #include <ArduinoJson.h>
 #include "secret_keys.h"
 
-#define TIME_INTERVAL 5 // time between two send (in minutes), minimum 5
+#define TIME_INTERVAL 5 // time between two send (in minutes), minimum 5, maximum 59
 
 // Domain Name with full URL Path for HTTP POST Request
 String serverName = "http://192.168.139.27/add_measure.php"; //"http://preprodapi.mde.epf.fr/add_measure.php"; // http://192.168.139.27/add_measure.php"
@@ -15,6 +15,7 @@ String apiKey = EPF_API_KEY;
 void wifi_start()
 {
   int count=0;
+  WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   delay(500);
   //Serial.println("Connecting");
@@ -37,12 +38,6 @@ void wifi_start()
   //Serial.println("");
   //Serial.print("Connected to WiFi network with IP Address: ");
   //Serial.println(WiFi.localIP());
-}
-
-void wifi_restart()
-{
-  WiFi.mode(WIFI_STA);
-  wifi_start();
 }
 
 void wifi_stop()
