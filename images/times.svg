@@ -19,20 +19,20 @@
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:snap-object-midpoints="true"
      inkscape:zoom="1.3808221"
-     inkscape:cx="23.536703"
-     inkscape:cy="155.70434"
+     inkscape:cx="175.98212"
+     inkscape:cy="152.44542"
      inkscape:window-width="1920"
      inkscape:window-height="1055"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3" />
+     inkscape:current-layer="layer4" />
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -49,6 +49,20 @@
        prop_scale="1"
        scale_y_rel="false" />
   </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 3">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#e01b24;stroke-width:0.30000001;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0,3.30000016;stroke-opacity:1;stroke-dashoffset:0"
+       id="rect64994"
+       width="97.813705"
+       height="66.28196"
+       x="31.481422"
+       y="34.686878"
+       ry="0.16804905"
+       transform="translate(-34.862857,-37.464995)" />
+  </g>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
