@@ -37,275 +37,293 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="4.84375"
-     inkscape:cx="105.39355"
+     inkscape:cx="105.49677"
      inkscape:cy="59.251613"
      inkscape:window-width="1920"
      inkscape:window-height="1055"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg57148" />
+     inkscape:current-layer="layer1" />
   <text
      x="120.26416"
      y="72.041206"
      style="font-size:12px;font-family:Arial;text-anchor:middle"
      dominant-baseline="hanging"
      id="text57122" />
-  <line
-     x1="120.09861"
-     y1="47.041206"
-     x2="120.09861"
-     y2="64.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57124" />
-  <circle
-     cx="120.09861"
-     cy="67.041206"
-     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
-     id="ellipse57126"
-     r="3" />
   <text
      x="90.26416"
      y="72.041206"
      style="font-size:12px;font-family:Arial;text-anchor:middle"
      dominant-baseline="hanging"
      id="text57128" />
-  <line
-     x1="85.526321"
-     y1="47.041206"
-     x2="85.526321"
-     y2="64.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57130" />
-  <circle
-     cx="85.526321"
-     cy="67.041206"
-     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
-     id="ellipse57132"
-     r="3" />
   <text
      x="60.264164"
      y="72.041206"
      style="font-size:12px;font-family:Arial;text-anchor:middle"
      dominant-baseline="hanging"
      id="text57134" />
-  <line
-     x1="50.626839"
-     y1="47.041206"
-     x2="50.626839"
-     y2="64.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57136" />
-  <circle
-     cx="50.626839"
-     cy="67.041206"
-     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
-     id="ellipse57138"
-     r="3" />
-  <line
-     x1="15.96221"
-     y1="47.041206"
-     x2="15.96221"
-     y2="65.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57140" />
-  <line
-     x1="7.9622092"
-     y1="65.041206"
-     x2="23.96221"
-     y2="65.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57142" />
-  <line
-     x1="10.96221"
-     y1="71.041206"
-     x2="20.96221"
-     y2="71.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57144" />
-  <line
-     x1="13.96221"
-     y1="77.041206"
-     x2="17.96221"
-     y2="77.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line57146" />
-  <rect
-     style="fill:#ed333b;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
-     id="rect54922"
-     width="6.5636759"
-     height="39.854065"
-     x="47.468338"
-     y="13.513983"
-     ry="2.4131944" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="36.290359"
-     y="92.69619"
-     id="text48086"><tspan
-       sodipodi:role="line"
-       id="tspan48084"
-       x="36.290359"
-       y="92.69619"
-       style="font-size:10.6667px">12V</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="-0.52104002"
-     y="91.893799"
-     id="text40256"><tspan
-       sodipodi:role="line"
-       id="tspan40254"
-       x="-0.52104002"
-       y="91.893799"
-       style="font-size:10.6667px">GND</tspan></text>
-  <rect
-     style="fill:#241f31;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
-     id="rect57230"
-     width="6.5636759"
-     height="39.854065"
-     x="12.900542"
-     y="13.513983"
-     ry="2.4131944" />
-  <rect
-     style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
-     id="rect57232"
-     width="6.5636759"
-     height="39.854065"
-     x="82.036125"
-     y="13.513983"
-     ry="2.4131944" />
-  <rect
-     style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
-     id="rect57234"
-     width="6.5636759"
-     height="39.854065"
-     x="116.60392"
-     y="13.513983"
-     ry="2.4131944" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="-0.59896022"
-     y="7.9166918"
-     id="text57238"><tspan
-       sodipodi:role="line"
-       id="tspan57236"
-       x="-0.59896022"
-       y="7.9166918"
-       style="font-size:10.6667px">GND</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="38.513615"
-     y="8.4276352"
-     id="text57242"><tspan
-       sodipodi:role="line"
-       id="tspan57240"
-       x="38.513615"
-       y="8.4276352">VCC</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="73.33567"
-     y="8.0191231"
-     id="text57246"><tspan
-       sodipodi:role="line"
-       id="tspan57244"
-       x="73.33567"
-       y="8.0191231">SCK</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="112.46481"
-     y="8.3520432"
-     id="text57250"><tspan
-       sodipodi:role="line"
-       id="tspan57248"
-       x="112.46481"
-       y="8.3520432">CS</tspan></text>
   <text
      xml:space="preserve"
      id="text66220"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect66222);fill:#000000;fill-opacity:1;stroke:none"
      transform="translate(0.2641626,17.041207)" />
-  <line
-     x1="154.76169"
-     y1="47.041206"
-     x2="154.76169"
-     y2="64.041206"
-     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
-     id="line69132" />
-  <circle
-     cx="154.76169"
-     cy="67.041206"
-     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
-     id="ellipse69134"
-     r="3" />
-  <rect
-     style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
-     id="rect69136"
-     width="6.5636759"
-     height="39.854065"
-     x="151.17171"
-     y="13.513983"
-     ry="2.4131944" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="145.8829"
-     y="8.0702009"
-     id="text69140"><tspan
-       sodipodi:role="line"
-       id="tspan69138"
-       x="145.8829"
-       y="8.0702009">SO</tspan></text>
   <text
      xml:space="preserve"
      id="text77828"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect77830);fill:#000000;fill-opacity:1;stroke:none"
      transform="translate(0.2641626,17.041207)" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="68.776627"
-     y="82.141205"
-     id="text81296"><tspan
-       sodipodi:role="line"
-       id="tspan81294"
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-dashoffset:11.34"
+       id="rect499"
+       width="213.02467"
+       height="127.56879"
+       x="-14.965736"
+       y="-11.007647"
+       ry="2.4005499" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <line
+       x1="120.09861"
+       y1="47.041206"
+       x2="120.09861"
+       y2="64.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57124" />
+    <circle
+       cx="120.09861"
+       cy="67.041206"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+       id="ellipse57126"
+       r="3" />
+    <line
+       x1="85.526321"
+       y1="47.041206"
+       x2="85.526321"
+       y2="64.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57130" />
+    <circle
+       cx="85.526321"
+       cy="67.041206"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+       id="ellipse57132"
+       r="3" />
+    <line
+       x1="50.626839"
+       y1="47.041206"
+       x2="50.626839"
+       y2="64.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57136" />
+    <circle
+       cx="50.626839"
+       cy="67.041206"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+       id="ellipse57138"
+       r="3" />
+    <line
+       x1="15.96221"
+       y1="47.041206"
+       x2="15.96221"
+       y2="65.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57140" />
+    <line
+       x1="7.9622092"
+       y1="65.041206"
+       x2="23.96221"
+       y2="65.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57142" />
+    <line
+       x1="10.96221"
+       y1="71.041206"
+       x2="20.96221"
+       y2="71.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57144" />
+    <line
+       x1="13.96221"
+       y1="77.041206"
+       x2="17.96221"
+       y2="77.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line57146" />
+    <rect
+       style="fill:#ed333b;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
+       id="rect54922"
+       width="6.5636759"
+       height="39.854065"
+       x="47.468338"
+       y="13.513983"
+       ry="2.4131944" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="36.290359"
+       y="92.69619"
+       id="text48086"><tspan
+         sodipodi:role="line"
+         id="tspan48084"
+         x="36.290359"
+         y="92.69619"
+         style="font-size:10.6667px">12V</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="-0.52104002"
+       y="91.893799"
+       id="text40256"><tspan
+         sodipodi:role="line"
+         id="tspan40254"
+         x="-0.52104002"
+         y="91.893799"
+         style="font-size:10.6667px">GND</tspan></text>
+    <rect
+       style="fill:#241f31;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
+       id="rect57230"
+       width="6.5636759"
+       height="39.854065"
+       x="12.900542"
+       y="13.513983"
+       ry="2.4131944" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
+       id="rect57232"
+       width="6.5636759"
+       height="39.854065"
+       x="82.036125"
+       y="13.513983"
+       ry="2.4131944" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
+       id="rect57234"
+       width="6.5636759"
+       height="39.854065"
+       x="116.60392"
+       y="13.513983"
+       ry="2.4131944" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="-0.59896022"
+       y="7.9166918"
+       id="text57238"><tspan
+         sodipodi:role="line"
+         id="tspan57236"
+         x="-0.59896022"
+         y="7.9166918"
+         style="font-size:10.6667px">GND</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="38.513615"
+       y="8.4276352"
+       id="text57242"><tspan
+         sodipodi:role="line"
+         id="tspan57240"
+         x="38.513615"
+         y="8.4276352">VCC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="73.33567"
+       y="8.0191231"
+       id="text57246"><tspan
+         sodipodi:role="line"
+         id="tspan57244"
+         x="73.33567"
+         y="8.0191231">SCK</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="112.46481"
+       y="8.3520432"
+       id="text57250"><tspan
+         sodipodi:role="line"
+         id="tspan57248"
+         x="112.46481"
+         y="8.3520432">CS</tspan></text>
+    <line
+       x1="154.76169"
+       y1="47.041206"
+       x2="154.76169"
+       y2="64.041206"
+       style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+       id="line69132" />
+    <circle
+       cx="154.76169"
+       cy="67.041206"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+       id="ellipse69134"
+       r="3" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34"
+       id="rect69136"
+       width="6.5636759"
+       height="39.854065"
+       x="151.17171"
+       y="13.513983"
+       ry="2.4131944" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="145.8829"
+       y="8.0702009"
+       id="text69140"><tspan
+         sodipodi:role="line"
+         id="tspan69138"
+         x="145.8829"
+         y="8.0702009">SO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
        x="68.776627"
-       y="82.141205">GPIO</tspan><tspan
-       sodipodi:role="line"
-       x="68.776627"
-       y="95.474579"
-       id="tspan83714">18</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="103.53373"
-     y="82.474358"
-     id="text97672"><tspan
-       sodipodi:role="line"
-       id="tspan97668"
+       y="82.141205"
+       id="text81296"><tspan
+         sodipodi:role="line"
+         id="tspan81294"
+         x="68.776627"
+         y="82.141205">GPIO</tspan><tspan
+         sodipodi:role="line"
+         x="68.776627"
+         y="95.474579"
+         id="tspan83714">18</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
        x="103.53373"
-       y="82.474358">GPIO</tspan><tspan
-       sodipodi:role="line"
-       x="103.53373"
-       y="95.807732"
-       id="tspan97670">23 or 5</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
-     x="150.87167"
-     y="82.94738"
-     id="text101368"><tspan
-       sodipodi:role="line"
-       id="tspan101364"
+       y="82.474358"
+       id="text97672"><tspan
+         sodipodi:role="line"
+         id="tspan97668"
+         x="103.53373"
+         y="82.474358">GPIO</tspan><tspan
+         sodipodi:role="line"
+         x="103.53373"
+         y="95.807732"
+         id="tspan97670">23 or 5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.6667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
        x="150.87167"
-       y="82.94738">GPIO</tspan><tspan
-       sodipodi:role="line"
-       x="150.87167"
-       y="96.280754"
-       id="tspan101366">19</tspan></text>
+       y="82.94738"
+       id="text101368"><tspan
+         sodipodi:role="line"
+         id="tspan101364"
+         x="150.87167"
+         y="82.94738">GPIO</tspan><tspan
+         sodipodi:role="line"
+         x="150.87167"
+         y="96.280754"
+         id="tspan101366">19</tspan></text>
+  </g>
 </svg>
