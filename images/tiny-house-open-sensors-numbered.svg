@@ -32,7 +32,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer4"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -80,6 +80,19 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(-9.2604034,9.2604163)" />
   </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 3">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-linejoin:round;stroke-dashoffset:11.34"
+       id="rect117"
+       width="83.34375"
+       height="64.822914"
+       x="-13.088511"
+       y="-6.4822903"
+       ry="0.63514549" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
