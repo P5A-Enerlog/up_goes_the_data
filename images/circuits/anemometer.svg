@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Circuit Diagram, cdlibrary.dll 4.0.0.0 -->
+
+<svg
+   version="1.1"
+   width="288.64319"
+   height="123.23588"
+   id="svg22685"
+   sodipodi:docname="anemometer.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22689" />
+  <sodipodi:namedview
+     id="namedview22687"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.421875"
+     inkscape:cx="78.245161"
+     inkscape:cy="67.303226"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22685" />
+  <line
+     x1="195.38606"
+     y1="77.90625"
+     x2="215.38606"
+     y2="77.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22619" />
+  <line
+     x1="135.38606"
+     y1="57.90625"
+     x2="215.38606"
+     y2="57.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22621" />
+  <line
+     x1="15.386069"
+     y1="57.90625"
+     x2="45.38607"
+     y2="57.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22623" />
+  <line
+     x1="125.38607"
+     y1="87.90625"
+     x2="135.38606"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22625" />
+  <line
+     x1="135.38606"
+     y1="27.90625"
+     x2="135.38606"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22627" />
+  <line
+     x1="115.38607"
+     y1="27.90625"
+     x2="135.38606"
+     y2="27.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22629" />
+  <line
+     x1="45.38607"
+     y1="87.90625"
+     x2="55.38607"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22631" />
+  <line
+     x1="45.38607"
+     y1="27.90625"
+     x2="45.38607"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22633" />
+  <line
+     x1="45.38607"
+     y1="27.90625"
+     x2="65.38607"
+     y2="27.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22635" />
+  <line
+     x1="65.38607"
+     y1="27.90625"
+     x2="86.38607"
+     y2="27.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22637" />
+  <line
+     x1="94.38607"
+     y1="27.90625"
+     x2="115.38607"
+     y2="27.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22639" />
+  <line
+     x1="86.38607"
+     y1="13.90625"
+     x2="86.38607"
+     y2="41.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22641" />
+  <line
+     x1="94.38607"
+     y1="13.90625"
+     x2="94.38607"
+     y2="41.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22643" />
+  <text
+     x="90.38607"
+     y="7.90625"
+     style="font-size:11px;font-family:Arial;text-anchor:middle"
+     dominant-baseline="baseline"
+     id="text22645">100 nF</text>
+  <line
+     x1="115.38607"
+     y1="87.90625"
+     x2="125.38607"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22647" />
+  <line
+     x1="55.38607"
+     y1="87.90625"
+     x2="65.38607"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22649" />
+  <line
+     x1="15.386069"
+     y1="57.90625"
+     x2="15.386069"
+     y2="95.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22651" />
+  <line
+     x1="7.3860698"
+     y1="95.90625"
+     x2="23.38607"
+     y2="95.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22653" />
+  <line
+     x1="10.386069"
+     y1="101.90625"
+     x2="20.38607"
+     y2="101.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22655" />
+  <line
+     x1="13.386069"
+     y1="107.90625"
+     x2="17.38607"
+     y2="107.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22657" />
+  <text
+     x="165.38606"
+     y="102.90625"
+     style="font-size:12px;font-family:Arial;text-anchor:middle"
+     dominant-baseline="hanging"
+     id="text22659" />
+  <line
+     x1="165.38606"
+     y1="57.90625"
+     x2="165.38606"
+     y2="94.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22661" />
+  <circle
+     cx="165.38606"
+     cy="97.90625"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="ellipse22663"
+     r="3" />
+  <text
+     x="195.38606"
+     y="102.90625"
+     style="font-size:12px;font-family:Arial;text-anchor:middle"
+     dominant-baseline="hanging"
+     id="text22665" />
+  <line
+     x1="195.38606"
+     y1="77.90625"
+     x2="195.38606"
+     y2="94.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22667" />
+  <circle
+     cx="195.38606"
+     cy="97.90625"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="ellipse22669"
+     r="3" />
+  <line
+     x1="65.38607"
+     y1="87.90625"
+     x2="70.38607"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22671" />
+  <line
+     x1="110.38607"
+     y1="87.90625"
+     x2="115.38607"
+     y2="87.90625"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22673" />
+  <rect
+     x="70.38607"
+     y="79.90625"
+     width="40"
+     height="16"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="rect22675" />
+  <text
+     x="90.38607"
+     y="73.90625"
+     style="font-size:11px;font-family:Arial;text-anchor:middle"
+     dominant-baseline="baseline"
+     id="text22677">10 kΩ</text>
+  <circle
+     cx="135.38606"
+     cy="57.90625"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="ellipse22679"
+     r="2" />
+  <circle
+     cx="165.38606"
+     cy="57.90625"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="ellipse22681"
+     r="2" />
+  <circle
+     cx="45.38607"
+     cy="57.90625"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="ellipse22683"
+     r="2" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="-0.74869603"
+     y="123.04707"
+     id="text23573"><tspan
+       sodipodi:role="line"
+       id="tspan23571"
+       x="-0.74869603"
+       y="123.04707"
+       style="font-size:13.3333px">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="124.19491"
+     y="119.97475"
+     id="text25481"><tspan
+       sodipodi:role="line"
+       id="tspan25479"
+       x="124.19491"
+       y="119.97475"
+       style="font-size:13.3333px">GPIO32</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="189.07259"
+     y="119.27809"
+     id="text30669"><tspan
+       sodipodi:role="line"
+       id="tspan30667"
+       x="189.07259"
+       y="119.27809"
+       style="font-size:13.3333px">3.3V</tspan></text>
+  <rect
+     style="fill:#deddda;stroke:#000000;stroke-width:1.12629;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.34;stroke-opacity:1"
+     id="rect33627"
+     width="59.77383"
+     height="43.740517"
+     x="215.42354"
+     y="46.026062"
+     ry="2.4694953" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="201.61865"
+     y="39.943596"
+     id="text34818"><tspan
+       sodipodi:role="line"
+       id="tspan34816"
+       x="201.61865"
+       y="39.943596"
+       style="font-size:13.3333px">Anemometer</tspan></text>
+</svg>
