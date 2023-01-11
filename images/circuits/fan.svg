@@ -3,8 +3,8 @@
 
 <svg
    version="1.1"
-   width="147.31364"
-   height="164.50769"
+   width="165.5957"
+   height="172.42944"
    id="svg140295"
    sodipodi:docname="fan.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -25,8 +25,8 @@
      showgrid="false"
      inkscape:zoom="2.7678571"
      inkscape:rotation="1"
-     inkscape:cx="155.99407"
-     inkscape:cy="97.369779"
+     inkscape:cx="158.24345"
+     inkscape:cy="102.02801"
      inkscape:window-width="1920"
      inkscape:window-height="1055"
      inkscape:window-x="0"
@@ -34,34 +34,36 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer6" />
   <text
-     x="23.313641"
-     y="131.16685"
+     x="25.446398"
+     y="135.91493"
      style="font-size:12px;font-family:Arial;text-anchor:middle"
      dominant-baseline="hanging"
      id="text140275" />
   <text
-     x="143.31364"
-     y="71.166855"
+     x="145.4464"
+     y="75.914932"
      style="font-size:12px;font-family:Arial;text-anchor:middle"
      dominant-baseline="hanging"
      id="text140281" />
   <g
      inkscape:groupmode="layer"
      id="layer6"
-     inkscape:label="Layer 2">
+     inkscape:label="Layer 2"
+     transform="translate(2.1327564,4.7480752)">
     <rect
-       style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-dashoffset:11.34"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.02163;stroke-linejoin:round;stroke-dashoffset:11.34"
        id="rect947"
-       width="189.85973"
-       height="179.58514"
-       x="-19.401724"
-       y="-5.9234567"
-       ry="2.4005499" />
+       width="192.38329"
+       height="184.98082"
+       x="-11.738716"
+       y="-10.019084"
+       ry="2.4726751" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer5"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(2.1327564,4.7480752)">
     <line
        x1="23.313641"
        y1="96.166855"
@@ -266,5 +268,16 @@
          y="161.73427"
          id="tspan150403"
          style="font-size:13.3333px">output</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="130.20808"
+       y="82.888496"
+       id="text43"><tspan
+         sodipodi:role="line"
+         id="tspan41"
+         x="130.20808"
+         y="82.888496"
+         style="font-size:13.3333px">12 V</tspan></text>
   </g>
 </svg>
